@@ -14,6 +14,10 @@ app.use(cors());
 app.use('/users', users);
 app.use('/documents', documents);
 
+app.get("/", (req, res) => {
+    res.send("Hello");
+})
+
 app.listen(port, () => {
     console.log(`Server listening on the port: ${port}`);
 })
