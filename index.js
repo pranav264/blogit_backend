@@ -15,7 +15,7 @@ app.use('/users', users);
 app.use('/documents', documents);
 
 app.get("/", (req, res) => {
-    res.send("Hello");
+    res.json("Hello");
 })
 
 app.listen(port, () => {
