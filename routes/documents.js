@@ -16,7 +16,7 @@ router.post("/createDocument", async (req, res) => {
 
     const decoded = jwt.verify(token, jwt_secret_key);
     if (decoded.username === username) {
-      await client.close();
+      await client.connect();
 
       const user = await Users.findOne({ username: username });
       await Documents.insertOne({
