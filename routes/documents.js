@@ -84,7 +84,7 @@ router.post("/editDocument", async (req, res) => {
       await client.connect();
 
       const user = await Users.findOne({ username: username });
-      await Documents.updateOne({ createdBy: new ObjectId(user._id.toString()),
+      await Documents.updateOne({ createdBy: user._id.toString(),
         _id: new ObjectId(document_id)
        }, {
         $set: {
